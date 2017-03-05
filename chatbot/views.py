@@ -1259,13 +1259,13 @@ def handle_quickreply(fbid,payload):
         p.save()
         return post_facebook_message(sender_id,'Please provide me with the link to your Twitter profile')
 
-        elif payload == 'GITHUB':
+    elif payload == 'GITHUB':
         p = eresume.objects.get_or_create(fbid =fbid)[0]
         p.state = '22'        
         p.save()
         return post_facebook_message(sender_id,'Please provide me with the link to your Twitter profile')    
 
-        elif payload == 'INSTA':
+    elif payload == 'INSTA':
         p = eresume.objects.get_or_create(fbid =fbid)[0]
         p.state = '23'        
         p.save()
