@@ -824,7 +824,7 @@ def works_quickreplies(fbid):
       {
         "content_type":"text",
         "title":"Just Name",
-        "payload":"JUSTTEXT"
+        "payload":"JUST TEXT"
       },      
 
                  
