@@ -1,0 +1,325 @@
+
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en" class="ace ace-card-on ace-tab-nav-on ace-main-nav-on ace-sidebar-on">
+
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>{{ name }}</title>
+    <meta name="description" content="">
+
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <link rel="shortcut icon" href="favicon.ico">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Quicksand:400,700" rel="stylesheet">
+
+    <!-- Icon Fonts -->
+    <link href="{% static 'chatbot/eresume2/assets/fonts/icomoon/style.css' %}" rel="stylesheet">
+
+    <!-- Styles -->
+    <link href="{% static 'chatbot/eresume2/assets/css/plugins.min.css' %}" rel="stylesheet">
+    <link href="{% static 'chatbot/eresume2/assets/css/style.min.css' %}" rel="stylesheet">
+
+    <!-- Modernizer -->
+    <script type="text/javascript" src="{% static 'chatbot/eresume2/assets/js/vendor/modernizr-3.3.1.min.js' %}"></script>
+	  <script>
+	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	  })(window,document,'script','../../../www.google-analytics.com/analytics.js','ga');
+
+	  ga('create', 'UA-92973565-2', 'auto');
+	  ga('send', 'pageview');
+
+	</script>
+  </head>
+  <body class="">
+     <div class="ace-wrapper">
+         
+
+                <nav id="ace-nav-sm" class="ace-nav hidden-lg hidden-md">
+            <ul class="clear-list">
+    <li>
+        <a href="index-2.html" data-tooltip="Home"><img class="avatar avatar-42" src="{% static 'chatbot/eresume2/assets/images/uploads/avatar/avatar-42x42.png' %}" alt=""></a>
+    </li>
+    <li>
+        <a href="index-2.html" data-tooltip="About"><span class="ace-icon ace-icon-about"></span></a>
+    </li>
+    <li>
+        <a href="experience.html" data-tooltip="Experience"><span class="ace-icon ace-icon-experience"></span></a>
+    </li>
+    <li>
+        <a href="portfolio.html" data-tooltip="Portfolio"><span class="ace-icon ace-icon-portfolio"></span></a>
+    </li>
+    <li>
+        <a href="testimonials.html" data-tooltip="References"><span class="ace-icon ace-icon-references"></span></a>
+    </li>
+    <li>
+        <a href="contact.html" data-tooltip="Contact"><span class="ace-icon ace-icon-contact"></span></a>
+    </li>
+    <li>
+        <a href="category.html" data-tooltip="Blog"><span class="ace-icon ace-icon-blog"></span></a>
+    </li>
+</ul>        </nav><!-- #ace-tab-nav-sm -->
+        
+        <article id="ace-card" class="ace-card bg-primary">
+    <div class="ace-card-inner text-center">
+        <img class="avatar avatar-195" src="{{ displaypicture }}" width="195" height="195" alt="">
+        <h1>{{ name }}</h1>
+        <p class="text-muted">{{ field }}</p>
+        <ul class="ace-social clear-list">
+        {% if fblink == "NULL" %}
+        {% else %}
+            <li><a><span class="ace-icon ace-icon-facebook" href="{{ fblink }}"></span></a></li>
+        {% endif %}
+        {% if twitterlink == "NULL" %}
+        {% else %}
+            <li><a><span class="ace-icon ace-icon-twitter" href="{{ twitterlink }}"></span></a></li>
+        {% endif %}
+        {% if instagramlink == "NULL" %}
+        {% else %}
+            <li><a><span class="ace-icon ace-icon-instagram" href="{{ instagramlink }}"></span></a></li>
+        {% endif %}
+        {% if githublink == "NULL" %}
+        {% else %}
+            <li><a><span class="ace-icon ace-icon-github" href="{{ githublink }}"></span></a></li>
+        {% endif %}
+        </ul>
+    </div>
+
+    <footer class="ace-card-footer">
+        <a class="btn btn-default btn-lg btn-block btn-thin btn-upper" href="{{ cvlink }}">Download Resume</a>
+    </footer>
+</article><!-- #ace-card -->
+
+        <div id="ace-content" class="ace-container-shift">
+            <div class="ace-container">
+
+                                    <div id="ace-nav-wrap" class="hidden-sm hidden-xs">
+                        <div class="ace-nav-cont">
+                            <div id="ace-nav-scroll">
+                                <nav id="ace-nav" class="ace-nav">
+                                    </nav>
+                            </div>
+
+                            <div id="ace-nav-tools" class="hidden">
+                                <span class="ace-icon ace-icon-dots-three-horizontal"></span>
+
+                                <button id="ace-nav-arrow" class="clear-btn">
+                                    <span class="ace-icon ace-icon-chevron-thin-down"></span>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="ace-nav-btm"></div>
+                    </div><!-- .ace-nav-wrap -->
+                
+                <div class="ace-paper-stock">
+                    <main class="ace-paper clearfix">
+                        <div class="ace-paper-cont clear-mrg">    <div class="padd-box clear-mrg">
+		
+
+        <section class="section brd-btm">
+            <div class="row">
+                <div class="col-sm-12 clear-mrg text-box">
+                    <h2 class="title-lg text-upper">Objective</h2>
+
+                    <p><b>{{ elaborate }} </p>
+
+                                    </div>
+            </div>
+        </section><!-- .section -->
+                            
+                             <section class="section brd-btm">
+            <div class="row">
+                <div class="col-sm-12 clear-mrg text-box">
+                    <h2 class="title-lg text-upper">About Me</h2>
+
+                    <p><b>Helo, I’m {{ name }} <br>
+                    {{ description }}   </p>
+
+                                    </div>
+            </div>
+        </section><!-- .section -->
+                            
+                            
+
+        <section class="section brd-btm">
+            <div class="row">
+                <div class="col-sm-8 clear-mrg">
+                    <h2 class="title-lg text-upper">Personal Information</h2>
+
+                    <dl class="dl-horizontal clear-mrg">
+                        <dt class="text-upper">Full Name</dt>
+                        <dd>{{ name }}</dd>
+
+                        <dt class="text-upper">D.o.b.</dt>
+                        <dd>{{dob}}</dd>
+
+                        <dt class="text-upper">address</dt>
+                        <dd>{{ location }}</dd>
+
+                        <dt class="text-upper">e-mail</dt>
+                        <dd><a href="mailto:robertsmith@company.com">{{ emailid }}</a></dd>
+
+                        <dt class="text-upper">phone</dt>
+                        <dd>{{ mobile }}</dd>
+                    </dl>
+                </div><!-- .col-sm-6 -->
+
+                
+            </div><!-- .row -->
+        </section><!-- .section -->
+
+        {% if workdescribe1 == "NULL" %}
+        {% else %}
+        <section class="section">
+            <h2 class="title-lg text-upper">Work Done</h2>
+
+            <div class="row">
+
+            {% if workdescribe1 == "NULL" %}
+            {% else %}
+                <div class="col-sm-6 clear-mrg">
+                    <div class="award-box">
+                    {% if pictureurl1 == "NULL" %}
+                        <figure class="award-img">
+                            <img src="https://placeholdit.imgix.net/~text?txtsize=50&txt={{ work1 }}%1&w=400&h=500" alt="">
+                        </figure>
+                    {% else %}
+                        <figure class="award-img">
+                            <img src="{{ pictureurl1 }}" alt="">
+                        </figure>
+                    {% endif %}
+                        
+
+                        <div class="award-text text-muted clear-mrg">
+                            <p>{{ workdescribe1 }}</p>
+                        </div>
+                        </div>
+                    </div>
+                </div><!-- .col-sm-6 -->
+
+            {% endif %}
+
+
+
+            {% if workdescribe2 == "NULL" %}
+            {% else %}
+                <div class="col-sm-6 clear-mrg">
+                    <div class="award-box">
+                    {% if pictureurl2 == "NULL" %}
+                        <figure class="award-img">
+                            <img src="https://placeholdit.imgix.net/~text?txtsize=50&txt={{ work2 }}%1&w=400&h=500" alt="">
+                        </figure>
+                    {% else %}
+                        <figure class="award-img">
+                            <img src="{{ pictureurl2 }}" alt="">
+                        </figure>
+                    {% endif %}
+                        
+
+                        <div class="award-text text-muted clear-mrg">
+                            <p>{{ workdescribe2 }}</p>
+                        </div>
+                        </div>
+                    </div>
+                </div><!-- .col-sm-6 -->
+
+            {% endif %}
+            </div><!-- .row -->
+
+
+            <div class="row">
+
+            {% if workdescribe3 == "NULL" %}
+            {% else %}
+                <div class="col-sm-6 clear-mrg">
+                    <div class="award-box">
+                    {% if pictureurl3 == "NULL" %}
+                        <figure class="award-img">
+                            <img src="https://placeholdit.imgix.net/~text?txtsize=50&txt={{ work3 }}%1&w=400&h=500" alt="">
+                        </figure>
+                    {% else %}
+                        <figure class="award-img">
+                            <img src="{{ pictureurl3 }}" alt="">
+                        </figure>
+                    {% endif %}
+                        
+
+                        <div class="award-text text-muted clear-mrg">
+                            <p>{{ workdescribe3 }}</p>
+                        </div>
+                    </div>
+                </div><!-- .col-sm-6 -->
+            {% endif %}
+
+
+            {% if workdescribe4 == "NULL" %}
+            {% else %}
+
+                <div class="col-sm-6 clear-mrg">
+                    <div class="award-box">
+                    {% if pictureurl4 == "NULL" %}
+                        <figure class="award-img">
+                            <img src="https://placeholdit.imgix.net/~text?txtsize=50&txt={{ work4 }}%1&w=400&h=500" alt="">
+                        </figure>
+                    {% else %}
+                        <figure class="award-img">
+                            <img src="{{ pictureurl4 }}" alt="">
+                        </figure>
+                    {% endif %}
+                        
+
+                        <div class="award-text text-muted clear-mrg">
+                            <p>{{ workdescribe4 }}</p>
+                        </div>
+                    </div>
+                </div><!-- .col-sm-6 -->
+
+            {% endif %}
+            </div><!-- .row -->
+        </section><!-- .section -->
+        {% endif %}
+    </div><!-- .padd-box -->
+                </div><!-- .ace=paper-cont -->
+            </main><!-- .ace-paper -->
+        </div><!-- .ace-paper-stock -->
+
+        </div><!-- .ace-container -->
+    </div><!-- #ace-content -->
+
+    
+    <footer id="ace-footer" class="ace-container-shift">
+        <div class="ace-container">
+            <div class="clear-mrg">
+                <p class="text-center">Copyright @ Developed By ezy.cv</p>
+            </div>
+        </div><!-- .ace-container -->
+    </footer><!-- #ace-footer -->
+
+        <svg id="ace-bg-shape-1" class="hidden-sm hidden-xs" height="519" width="758">
+        <polygon class="pol" points="0,455,693,352,173,0,92,0,0,71"/>
+    </svg>
+
+    <svg id="ace-bg-shape-2" class="hidden-sm hidden-xs" height="536" width="633">
+        <polygon points="0,0,633,0,633,536"/>
+    </svg>
+    </div><!-- .ace-wrapper -->
+
+<!-- Scripts -->
+<script type="text/javascript" src="../../../ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="{% static 'chatbot/eresume2/assets/js/lib/jquery-1.12.4.min.html' %}"><\/script>')</script>
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDiwY_5J2Bkv2UgSeJa4NOKl6WUezSS9XA"></script>
+
+<script type="text/javascript" src="{% static 'chatbot/eresume2/assets/js/plugins.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'chatbot/eresume2/assets/js/theme.min.js' %}"></script>
+</body>
+
+<!-- Mirrored from certy.px-lab.com/html/dark/ by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 05 Mar 2017 12:20:04 GMT -->
+</html>
