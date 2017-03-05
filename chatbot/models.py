@@ -3,7 +3,7 @@ from django.db import models
 # Create your models here.
 class eresume(models.Model):
     name = models.CharField(max_length = 250)
-    mobile = models.IntegerField(max_length = 100 ,  null=True)
+    mobile = models.CharField(max_length = 100 , default = 'NULL')
     elaborate = models.CharField(max_length = 1000, default = 'NULL')
     fblink= models.CharField(max_length = 1000, default = 'NULL')
     description= models.CharField(max_length = 1000, default = 'NULL')
@@ -19,10 +19,10 @@ class eresume(models.Model):
     work2 = models.CharField(max_length = 250, default = 'NULL')
     work3 = models.CharField(max_length = 250, default = 'NULL')
     work4 = models.CharField(max_length = 250, default = 'NULL')
-    picture1 = models.CharField(max_length = 1250, default = 'NULL')
-    picture2 = models.CharField(max_length = 250, default = 'NULL')
-    picture3 = models.CharField(max_length = 250, default = 'NULL')
-    picture4 = models.CharField(max_length = 250, default = 'NULL')
+    name1 = models.CharField(max_length = 1250, default = 'NULL')
+    name2 = models.CharField(max_length = 250, default = 'NULL')
+    name3 = models.CharField(max_length = 250, default = 'NULL')
+    name4 = models.CharField(max_length = 250, default = 'NULL')
     workdescribe1 = models.CharField(max_length = 1250, default = 'NULL')
     workdescribe2 = models.CharField(max_length = 250, default = 'NULL')
     workdescribe3 = models.CharField(max_length = 250, default = 'NULL')

@@ -212,16 +212,25 @@ class MyChatBotView(generic.View):
                     p.name = name
                     p.save()
 
+
+
+
                     if p.state == '2':
                         p.state = '0'
                         p.save()
                         post_facebook_message(sender_id,'Now provide me with some of your details')
 
-                    elif p.state == '3':
+                    elif p.state == '25':
+                        p.name = message_text
+                        p.state = '24'
+                        p.save()                        
+                        post_facebook_message(sender_id,'Please send me a Picture to add in your Eresume:') 
+
+                     elif p.state == '3':
                         p.mobile = message_text
                         p.state = '4'
                         p.save()                        
-                        post_facebook_message(sender_id,'Your emailid')                       
+                        post_facebook_message(sender_id,'Your emailid')                         
 
                     elif p.state == '4':
                         p.emailid = message_text
@@ -240,6 +249,18 @@ class MyChatBotView(generic.View):
                         p.state = '0'
                         p.save()
                         post_facebook_message(sender_id,'social_quickreplies')
+
+                     elif p.state == '22':
+                        p.githublink = message_text
+                        p.state = '0'
+                        p.save()
+                        post_facebook_message(sender_id,'social_quickreplies')
+                        
+                     elif p.state == '23':
+                        p.instagramlink = message_text
+                        p.state = '0'
+                        p.save()
+                        post_facebook_message(sender_id,'social_quickreplies')      
 
                     elif p.state == '7':
                         p.description = message_text
@@ -267,7 +288,7 @@ class MyChatBotView(generic.View):
 
                     elif p.state == '11' :
                         
-                        if message_text == "Just Text" :
+                        if message_text == "Just Name" :
                           
                           p.i = str(int(p.i) + 2)
                           p.j = str(int(p.i) +1)
@@ -291,28 +312,101 @@ class MyChatBotView(generic.View):
 
                     elif p.state == '12':
                         p.work1 = "https://placeholdit.imgix.net/~text?txtsize=50&txt=" + message_text + "&w=400&h=300" 
+                        p.state = '26'
+                        p.save()
+                        post_facebook_message(sender_id,'Please give a little Description')
+
+                    elif p.state == '26':
+                        p.workdescribe1 =  message_text  
                         p.state = '0'
                         p.save()
-                        post_facebook_message(sender_id,'work_quickreplies')
+                        post_facebook_message(sender_id,'work_quickreplies')   
 
                     elif p.state == '14':
                         p.work2 = "https://placeholdit.imgix.net/~text?txtsize=50&txt=" + message_text + "&w=400&h=300" 
+                        p.state = '27'
+                        p.save()
+                        post_facebook_message(sender_id,'Please give a little Description')
+
+                    elif p.state == '27':
+                        p.workdescribe2 =  message_text  
                         p.state = '0'
                         p.save()
-                        post_facebook_message(sender_id,'work_quickreplies')
+                        post_facebook_message(sender_id,'work_quickreplies')   
 
 
                     elif p.state == '16':
                         p.work3 = "https://placeholdit.imgix.net/~text?txtsize=50&txt=" + message_text + "&w=400&h=300" 
+                        p.state = '28'
+                        p.save()
+                        post_facebook_message(sender_id,'Please give a little Description')
+
+                    elif p.state == '28':
+                        p.workdescribe3 =  message_text  
                         p.state = '0'
                         p.save()
-                        post_facebook_message(sender_id,'work_quickreplies')
+                        post_facebook_message(sender_id,'work_quickreplies')   
 
                     elif p.state == '18':
                         p.work3 = "https://placeholdit.imgix.net/~text?txtsize=50&txt=" + message_text + "&w=400&h=300" 
+                        p.state = '29'
+                        p.save()
+                        post_facebook_message(sender_id,'Please give a little Description')
+
+                    elif p.state == '29':
+                        p.workdescribe1 =  message_text  
                         p.state = '0'
                         p.save()
-                        post_facebook_message(sender_id,'resumeask')            
+                        post_facebook_message(sender_id,'resumeask')  
+
+                    elif p.state == '30':
+                        p.name1 =  message_text  
+                        p.state = '34'
+                        p.save()
+                        post_facebook_message(sender_id,'Please give a little Description') 
+                        
+                    elif p.state == '31':
+                        p.name2 =  message_text  
+                        p.state = '35'
+                        p.save()
+                        post_facebook_message(sender_id,'Please give a little Description') 
+                        
+                    elif p.state == '32':
+                        p.name3 =  message_text  
+                        p.state = '36'
+                        p.save()
+                        post_facebook_message(sender_id,'Please give a little Description') 
+                        
+
+                    elif p.state == '33':
+                        p.name4 =  message_text  
+                        p.state = '37'
+                        p.save()
+                        post_facebook_message(sender_id,'Please give a little Description')
+
+                    elif p.state == '34':
+                        p.workdescribe1 =  message_text  
+                        p.state = '0'
+                        p.save()
+                        post_facebook_message(sender_id,'work_quickreplies') 
+                        
+                    elif p.state == '35':
+                        p.workdescribe2 =  message_text  
+                        p.state = '0'
+                        p.save()
+                        post_facebook_message(sender_id,'work_quickreplies') 
+
+                    elif p.state == '36':
+                        p.workdescribe3 =  message_text  
+                        p.state = '0'
+                        p.save()
+                        post_facebook_message(sender_id,'work_quickreplies') 
+                        
+                    elif p.state == '37':
+                        p.workdescribe4 =  message_text  
+                        p.state = '0'
+                        p.save()
+                        post_facebook_message(sender_id,'resumeask')                                                               
                         
                     
                     elif p.state == '20':
@@ -503,27 +597,33 @@ class MyChatBotView(generic.View):
                       p = eresume.objects.get_or_create(fbid =sender_id)[0]
                       if p.state == '13':
                           p.work1 = message["message"]["attachments"][0]["payload"]["url"]
-                          p.state = '0'
+                          p.state = '30'
                           p.save()
-                          post_facebook_message(sender_id,'work_quickreplies')
+                          post_facebook_message(sender_id,'What was the Name of Your Project')
 
                       elif p.state == '15':
                           p.work2 = message["message"]["attachments"][0]["payload"]["url"]
-                          p.state = '0'
+                          p.state = '31'
                           p.save()
-                          post_facebook_message(sender_id,'work_quickreplies')
+                          post_facebook_message(sender_id,'What was the Name of Your Project')
 
                       elif p.state == '17':
                           p.work3 = message["message"]["attachments"][0]["payload"]["url"]
-                          p.state = '0'
+                          p.state = '32'
                           p.save()
-                          post_facebook_message(sender_id,'work_quickreplies')
+                          post_facebook_message(sender_id,'What was the Name of Your Project')
 
                       elif p.state == '19':
                           p.work4 = message["message"]["attachments"][0]["payload"]["url"]
-                          p.state = '0'
+                          p.state = '33'
                           p.save()
-                          post_facebook_message(sender_id,'resumeask')      
+                          post_facebook_message(sender_id,'What was the Name of Your Project')
+
+                      elif p.state == '24':
+                          p.displaypicture = message["message"]["attachments"][0]["payload"]["url"]
+                          p.state = '3'
+                          p.save()
+                          post_facebook_message(sender_id,'Please send me a contact number to enter in your Resume:')          
 
                         
                   else:
@@ -779,6 +879,23 @@ def social_quickreplies(fbid):
         "title":"Facebook Link",
         "payload":"FACEBOOK"
       },
+
+      {
+        "content_type":"text",
+        "title":"Github Link",
+        "payload":"GITHUB"
+      },
+
+
+      {
+        "content_type":"text",
+        "title":"Instagram Link",
+        "payload":"INSTA"
+      },
+
+    
+
+
 
       {
         "content_type":"text",
@@ -1124,10 +1241,10 @@ def handle_quickreply(fbid,payload):
 
     elif payload == 'END':
         p = eresume.objects.get_or_create(fbid =fbid)[0]
-        p.state = '3'
+        p.state = '25'
 
         p.save()
-        return post_facebook_message(sender_id,'Your Contact Phone Number')
+        return post_facebook_message(sender_id,'Please enter your Name to be displayed on the Resume')
 
 
     elif payload == 'FACEBOOK':
@@ -1140,7 +1257,19 @@ def handle_quickreply(fbid,payload):
         p = eresume.objects.get_or_create(fbid =fbid)[0]
         p.state = '6'        
         p.save()
-        return post_facebook_message(sender_id,'Please provide me with the link to your Twitter profile')        
+        return post_facebook_message(sender_id,'Please provide me with the link to your Twitter profile')
+
+        elif payload == 'GITHUB':
+        p = eresume.objects.get_or_create(fbid =fbid)[0]
+        p.state = '22'        
+        p.save()
+        return post_facebook_message(sender_id,'Please provide me with the link to your Twitter profile')    
+
+        elif payload == 'INSTA':
+        p = eresume.objects.get_or_create(fbid =fbid)[0]
+        p.state = '23'        
+        p.save()
+        return post_facebook_message(sender_id,'Please provide me with the link to your Twitter profile')            
  
     elif payload == 'ALL':
         p = eresume.objects.get_or_create(fbid =fbid)[0]
