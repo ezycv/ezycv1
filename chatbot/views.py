@@ -288,7 +288,7 @@ class MyChatBotView(generic.View):
 
                     elif p.state == '11' :
                         
-                        if message_text == "Just Text" :
+                        if message_text == "Just Name" :
                           
                           p.i = str(int(p.i) + 2)
                           p.j = str(int(p.i) +1)
@@ -824,7 +824,7 @@ def works_quickreplies(fbid):
       {
         "content_type":"text",
         "title":"Just Name",
-        "payload":"JUST TEXT"
+        "payload":"Just Name"
       },      
 
                  
