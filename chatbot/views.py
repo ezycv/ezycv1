@@ -226,7 +226,7 @@ class MyChatBotView(generic.View):
                         p.save()                        
                         post_facebook_message(sender_id,'Please send me a Picture to add in your Eresume:') 
 
-                     elif p.state == '3':
+                    elif p.state == '3':
                         p.mobile = message_text
                         p.state = '4'
                         p.save()                        
