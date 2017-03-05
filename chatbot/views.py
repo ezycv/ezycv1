@@ -250,13 +250,13 @@ class MyChatBotView(generic.View):
                         p.save()
                         post_facebook_message(sender_id,'social_quickreplies')
 
-                     elif p.state == '22':
+                    elif p.state == '22':
                         p.githublink = message_text
                         p.state = '0'
                         p.save()
                         post_facebook_message(sender_id,'social_quickreplies')
                         
-                     elif p.state == '23':
+                    elif p.state == '23':
                         p.instagramlink = message_text
                         p.state = '0'
                         p.save()
