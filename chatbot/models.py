@@ -3,7 +3,7 @@ from django.db import models
 # Create your models here.
 class eresume(models.Model):
     name = models.CharField(max_length = 250)
-    mobile = models.CharField(max_length = 100 , default = 'NULL')
+    mobile = models.CharField(max_length = 100 , null = True  )
     elaborate = models.CharField(max_length = 1000, default = 'NULL')
     fblink= models.CharField(max_length = 1000, default = 'NULL')
     description= models.CharField(max_length = 1000, default = 'NULL')
