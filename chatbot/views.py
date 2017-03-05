@@ -288,7 +288,7 @@ class MyChatBotView(generic.View):
 
                     elif p.state == '11' :
                         
-                        if message_text == "Just Name" :
+                        if message_text == "Just Text" :
                           
                           p.i = str(int(p.i) + 2)
                           p.j = str(int(p.i) +1)
@@ -823,7 +823,7 @@ def works_quickreplies(fbid):
 
       {
         "content_type":"text",
-        "title":"Just Text",
+        "title":"Just Name",
         "payload":"JUSTTEXT"
       },      
 
@@ -1263,13 +1263,13 @@ def handle_quickreply(fbid,payload):
         p = eresume.objects.get_or_create(fbid =fbid)[0]
         p.state = '22'        
         p.save()
-        return post_facebook_message(sender_id,'Please provide me with the link to your Twitter profile')    
+        return post_facebook_message(sender_id,'Please provide me with the link to your Github Handle')    
 
     elif payload == 'INSTA':
         p = eresume.objects.get_or_create(fbid =fbid)[0]
         p.state = '23'        
         p.save()
-        return post_facebook_message(sender_id,'Please provide me with the link to your Twitter profile')            
+        return post_facebook_message(sender_id,'Please provide me with the link to your Instagram profile')            
  
     elif payload == 'ALL':
         p = eresume.objects.get_or_create(fbid =fbid)[0]
